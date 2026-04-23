@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Everything 🥺❤️</title>
+    <title>For Aditi 😭</title>
     <style>
         :root {
-            --glass: rgba(255, 255, 255, 0.2);
+            --glass: rgba(255, 255, 255, 0.15);
             --text: #ffffff;
             --accent: #ff4d6d;
         }
@@ -14,7 +14,7 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             font-family: 'Segoe UI', sans-serif;
             display: flex;
             justify-content: center;
@@ -23,44 +23,43 @@
             overflow-x: hidden;
         }
         .container {
-            width: 90%;
-            max-width: 400px;
+            width: 85%;
+            max-width: 380px;
             background: var(--glass);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 30px;
-            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 25px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .hidden { display: none; }
-        h1 { font-size: 1.8rem; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-        p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px; }
+        h1 { font-size: 1.6rem; margin-bottom: 15px; }
+        p { font-size: 1rem; line-height: 1.5; margin-bottom: 20px; }
         
         .btn {
             display: block;
             width: 100%;
-            padding: 15px;
+            padding: 14px;
             margin: 10px 0;
             border: none;
-            border-radius: 15px;
+            border-radius: 12px;
             background: white;
-            color: var(--accent);
+            color: #1e3c72;
             font-weight: bold;
             font-size: 1rem;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.2s;
         }
-        .btn:active { transform: scale(0.95); }
         .btn-main { background: var(--accent); color: white; }
 
         .img-box {
             width: 100%;
-            height: 200px;
-            border-radius: 20px;
+            height: 180px;
+            border-radius: 15px;
             object-fit: cover;
-            margin-bottom: 20px;
-            border: 3px solid white;
+            margin-bottom: 15px;
+            border: 2px solid white;
         }
 
         #noBtn { position: absolute; }
@@ -70,32 +69,34 @@
 <body>
 
     <div id="page1" class="container">
-        <img src="IMG-20260422-WA0028.jpg" class="img-box" alt="You">
-        <h1>Tum udaas ho? 🥺</h1>
-        <p>Mera dil nahi lag raha jabse mujhe pata chala ki tum sad ho... Mere words ne tumhe hurt kiya, and I hate myself for that. 😭</p>
-        <button class="btn btn-main" onclick="showPage(2)">Suno meri baat... 😋</button>
+        <img src="IMG_20260423_130406.jpg" class="img-box" alt="Aditi">
+        <h1>Aditi tum sad ho? 😭</h1>
+        <p>Mujhe pata hai maine tumhe hurt kiya 😭 Mere words gande the aur tum unwanted feel kar rahi ho 😭</p>
+        <button class="btn btn-main" onclick="showPage(2)">Suno na 😋</button>
     </div>
 
     <div id="page2" class="container hidden">
-        <h1>I'm so sorry... 😭</h1>
-        <p>Main jaanta hoon maine tumhe unwanted feel karwaya, aur friends ko priority di. Wo meri sabse badi bewakoofi thi. 🥺</p>
-        <p>The truth is, tumhare bina sab kuch boring hai. Tum meri life ki **sabse badi priority** ho aur humesha rahogi. 🔱❤️</p>
-        <button class="btn btn-main" onclick="showPage(3)">Please smile na? 😋</button>
+        <h1>Main gadha hoon 😭</h1>
+        <p>Friends wali baat bol ke maine bohot badi galti ki 😭 Tum meri life ho aur hamesha priority rahogi 😋</p>
+        <p>I am really sorry Aditi 😭 Please ab udaas mat raho 😋</p>
+        <button class="btn btn-main" onclick="showPage(3)">Maaf kar do 😋</button>
     </div>
 
     <div id="page3" class="container hidden">
-        <h1>For My Smile Queen 👸❤️</h1>
-        <p>Main kuch bhi karunga tumhara mood theek karne ke liye. Tum jo bologe main wahi karunga...</p>
-        <button class="btn btn-main" onclick="celebrate()">Punish me as you like 😋❤️</button>
-        <button class="btn choice-btn" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">Nahi hona theek 😭</button>
+        <h1>Pick one Aditi 😋</h1>
+        <p>Main sab theek karunga 😋 Choose what you want:</p>
+        <button class="btn choice-btn" onclick="celebrate('A')">Never prioritize friends 😋</button>
+        <button class="btn choice-btn" onclick="celebrate('B')">Never say bad things 😋</button>
+        <button class="btn choice-btn" onclick="celebrate('C')">Punish me as you like 😋</button>
+        <button class="btn" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">Nahi 😭</button>
     </div>
 
     <div id="page4" class="container hidden">
-        <img src="IMG-20260422-WA0028.jpg" class="img-box" alt="Together">
-        <h1>Thank you for being so kind! 😋❤️</h1>
-        <p>Ab jaldi se chat pe aao aur meri saari galtiyo ki punishment do. I promise, ab se sirf dher saara pyaar! 🔱🔥</p>
-        <div style="font-size: 40px;">🌸✨🧸🎀🍫</div>
-        <button class="btn btn-main" onclick="location.reload()">Send me a Screenie! 📸</button>
+        <img src="IMG_20260423_130406.jpg" class="img-box" alt="Aditi">
+        <h1 id="outcomeTitle">😋</h1>
+        <p id="outcomeMsg"></p>
+        <div style="font-size: 35px;">😋😭😋😭</div>
+        <button class="btn btn-main" onclick="location.reload()">Reset 😋</button>
     </div>
 
     <script>
@@ -113,20 +114,33 @@
             noBtn.style.top = y + 'px';
         }
 
-        function celebrate() {
+        function celebrate(choice) {
+            const title = document.getElementById('outcomeTitle');
+            const msg = document.getElementById('outcomeMsg');
+            
+            if(choice === 'A') {
+                title.innerText = "Pakka Promise 😋";
+                msg.innerText = "Ab se friends baad mein 😋 Pehle sirf tum Aditi 😋";
+            } else if(choice === 'B') {
+                title.innerText = "No Bad Words 😋";
+                msg.innerText = "Main apne gusse pe control karunga 😋 Kabhi bura nahi bolunga 😋";
+            } else {
+                title.innerText = "Punish Me 😭";
+                msg.innerText = "Jo punishment deni hai dedo Aditi 😭 Main chup chap maan lunga 😋";
+            }
+
             showPage(4);
-            for(let i=0; i<50; i++) { setTimeout(createHeart, i * 100); }
+            for(let i=0; i<40; i++) { setTimeout(createHeart, i * 100); }
         }
 
         function createHeart() {
             const heart = document.createElement('div');
-            heart.innerHTML = (Math.random() > 0.5) ? '❤️' : '😋';
+            heart.innerHTML = (Math.random() > 0.5) ? '😋' : '😭';
             heart.style.position = 'fixed';
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.top = '100vh';
-            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            heart.style.fontSize = '20px';
             heart.style.transition = '3s linear';
-            heart.style.color = 'white';
             document.body.appendChild(heart);
             setTimeout(() => { heart.style.top = '-10vh'; heart.style.opacity = '0'; }, 50);
             setTimeout(() => heart.remove(), 3000);
