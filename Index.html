@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Everything 🥺❤️</title>
+    <style>
+        :root {
+            --glass: rgba(255, 255, 255, 0.2);
+            --text: #ffffff;
+            --accent: #ff4d6d;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        .hidden { display: none; }
+        h1 { font-size: 1.8rem; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+        p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px; }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 15px;
+            background: white;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:active { transform: scale(0.95); }
+        .btn-main { background: var(--accent); color: white; }
+
+        .img-box {
+            width: 100%;
+            height: 200px;
+            border-radius: 20px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid white;
+        }
+
+        #noBtn { position: absolute; }
+        .choice-btn { background: rgba(255,255,255,0.1); border: 1px solid white; color: white; }
+    </style>
+</head>
+<body>
+
+    <div id="page1" class="container">
+        <img src="IMG-20260422-WA0028.jpg" class="img-box" alt="You">
+        <h1>Tum udaas ho? 🥺</h1>
+        <p>Mera dil nahi lag raha jabse mujhe pata chala ki tum sad ho... Mere words ne tumhe hurt kiya, and I hate myself for that. 😭</p>
+        <button class="btn btn-main" onclick="showPage(2)">Suno meri baat... 😋</button>
+    </div>
+
+    <div id="page2" class="container hidden">
+        <h1>I'm so sorry... 😭</h1>
+        <p>Main jaanta hoon maine tumhe unwanted feel karwaya, aur friends ko priority di. Wo meri sabse badi bewakoofi thi. 🥺</p>
+        <p>The truth is, tumhare bina sab kuch boring hai. Tum meri life ki **sabse badi priority** ho aur humesha rahogi. 🔱❤️</p>
+        <button class="btn btn-main" onclick="showPage(3)">Please smile na? 😋</button>
+    </div>
+
+    <div id="page3" class="container hidden">
+        <h1>For My Smile Queen 👸❤️</h1>
+        <p>Main kuch bhi karunga tumhara mood theek karne ke liye. Tum jo bologe main wahi karunga...</p>
+        <button class="btn btn-main" onclick="celebrate()">Punish me as you like 😋❤️</button>
+        <button class="btn choice-btn" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">Nahi hona theek 😭</button>
+    </div>
+
+    <div id="page4" class="container hidden">
+        <img src="IMG-20260422-WA0028.jpg" class="img-box" alt="Together">
+        <h1>Thank you for being so kind! 😋❤️</h1>
+        <p>Ab jaldi se chat pe aao aur meri saari galtiyo ki punishment do. I promise, ab se sirf dher saara pyaar! 🔱🔥</p>
+        <div style="font-size: 40px;">🌸✨🧸🎀🍫</div>
+        <button class="btn btn-main" onclick="location.reload()">Send me a Screenie! 📸</button>
+    </div>
+
+    <script>
+        function showPage(num) {
+            document.querySelectorAll('.container').forEach(c => c.classList.add('hidden'));
+            document.getElementById('page' + num).classList.remove('hidden');
+        }
+
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 50);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 50);
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        function celebrate() {
+            showPage(4);
+            for(let i=0; i<50; i++) { setTimeout(createHeart, i * 100); }
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = (Math.random() > 0.5) ? '❤️' : '😋';
+            heart.style.position = 'fixed';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '100vh';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            heart.style.transition = '3s linear';
+            heart.style.color = 'white';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.style.top = '-10vh'; heart.style.opacity = '0'; }, 50);
+            setTimeout(() => heart.remove(), 3000);
+        }
+    </script>
+</body>
+</html>
